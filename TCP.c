@@ -17,7 +17,7 @@ char* RecvDataTCP(SOCKET s){
     int bytes_received;
     bool connection_closed=false;
     bool receive_failed=false; 
-    while(connection_closed==true|| receive_failed==true)
+    while(connection_closed==false|| receive_failed==false)
         bytes_received=recv(s,buf,sizeof(&buf)-1,0);
 
         if(bytes_received==SOCKET_ERROR){
