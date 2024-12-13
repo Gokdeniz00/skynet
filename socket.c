@@ -2,13 +2,14 @@
 void PrintLastError(const char* msg) {
     printf("%s: %d\n", msg, WSAGetLastError());
 }
-void createSocket(int family, int type, int protocol,SOCKET *s){
+int createSocket(int family, int type, int protocol,SOCKET *s){
     SOCKET sock = socket(family, type, protocol);
     if(s==INVALID_SOCKET){
         PrintLastError("Error Creating Socket");
         return 1;
     }
     *s=sock;
+    return 0;
 }
 int bindSocket(SOCKET s, char* ip, int port){
     struct sockaddr_in server;
