@@ -3,6 +3,8 @@
 
 #include <WinSock2.h>
 #include <stdio.h>
+#include "TCP.h"
+
 
 int initSkyNet();
 void cleanSkyNet();
